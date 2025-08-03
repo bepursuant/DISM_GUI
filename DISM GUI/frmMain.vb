@@ -174,9 +174,9 @@ Public Class frmMain
         DISM.StartInfo.CreateNoWindow = True
         DISM.StartInfo.FileName = "dism.exe"
         If chkMountReadOnly.Checked = True Then
-            DISM.StartInfo.Arguments = "/Mount-WIM /ReadOnly /WimFile:""" & strWIM & """" & " /index:""" & strIndex & " /MountDir:" & """" & strFolderName & """"
+            DISM.StartInfo.Arguments = $"/Mount-WIM /ReadOnly /WimFile:""{strWIM}"" /index:{strIndex} /MountDir:""{strFolderName}"""
         Else
-            DISM.StartInfo.Arguments = "/Mount-WIM /WimFile:""" & strWIM & """" & " /index:""" & strIndex & " /MountDir:" & """" & strFolderName & """"
+            DISM.StartInfo.Arguments = $"/Mount-WIM /WimFile:""{strWIM}"" /index:""{strIndex}"" /MountDir:""{strFolderName}"""
         End If
 
         strOutput = "Command line that ran is dism.exe " & DISM.StartInfo.Arguments
